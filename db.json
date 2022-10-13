@@ -1,0 +1,22 @@
+{
+  "productList": [
+    {
+      "productName": "tv",
+      "category": "electronics",
+      "freshness": "Brand-New",
+      "price": 3500,
+      "comment": "good quality",
+      "date": "2022-10-11T23:00:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "onion",
+      "category": "vegetables",
+      "freshness": "Brand-New",
+      "price": 550,
+      "comment": "very fresh",
+      "date": "2022-10-12T23:00:00.000Z",
+      "id": 2
+    }
+  ]
+}

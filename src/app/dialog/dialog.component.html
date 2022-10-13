@@ -1,0 +1,96 @@
+<!-- form heading format -->
+<!-- <h1 mat-dialog-title>Add Product Form</h1> -->
+<h1 mat-dialog-title>{{actionBtn1}}</h1>
+<!-- form body -->
+<div mat-dialog-content>
+    <form [formGroup]="productForm">
+        <!-- product name field format -->
+        <mat-form-field appearance="outline">
+        <mat-label>Product Name</mat-label>
+        <input
+         matInput placeholder="Product Name"
+         formControlName ="productName">
+    </mat-form-field>
+
+    <!-- product category format -->
+    <mat-form-field appearance="outline">
+        <mat-label>Product Category</mat-label>
+        <mat-select
+         placeholder="category"
+         formControlName ="category">
+            <mat-option value="electronics">Electronics</mat-option>
+            <mat-option value="vegetables">Vegetables</mat-option>
+            <mat-option value="fruits">Fruits</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <!-- product date setting format -->
+    <mat-form-field appearance="fill" class="example-form-field">
+        <mat-label>Choose a date</mat-label>
+        <input
+         matInput 
+         [matDatepicker]="datepicker"
+         formControlName ="date">
+        <mat-datepicker-toggle
+         matSuffix 
+         [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+            <button
+             mat-button 
+             matDatepickerCancel>
+                Cancel
+            </button>
+            <button
+             mat-raised-button 
+             color="primary" 
+             matDatepickerApply>
+                Apply
+            </button>
+            </mat-datepicker-actions>
+        </mat-datepicker>
+    </mat-form-field>
+    <!-- product newnest format-->
+    <mat-radio-group formControlName ="freshness">
+        <label for="">Product Freshness</label>
+        <mat-radio-button
+         *ngFor="let fresh of freshnessList" 
+         [value]="fresh">
+            {{fresh}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <!-- product price format -->
+    <mat-form-field appearance="outline">
+        <mat-label>Product Price</mat-label>
+        <input
+         matInput 
+         type ="number" 
+         placeholder="Product Price"
+         formControlName ="price">
+    </mat-form-field>
+    <!-- product commment format -->
+    <mat-form-field appearance="outline">
+        <mat-label>Comment</mat-label>
+        <textarea
+         matInput 
+         placeholder="comment"
+         formControlName ="comment"></textarea>
+    </mat-form-field>
+    <!-- setting the dialog button -->
+    <div mat-dialog-actions [align]="'end'">
+        <button
+         mat-raised-button 
+         color="primary" 
+         (click)="addProduct()">
+            {{actionBtn}}
+        </button>
+        <button
+         mat-raised-button 
+         style ="margin-left:8px;" 
+         color="warn" 
+         mat-dialog-close>
+            Close
+        </button>
+    </div>
+    </form>
+</div>
