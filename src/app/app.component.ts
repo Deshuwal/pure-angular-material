@@ -55,10 +55,10 @@ export class AppComponent implements OnInit {
   delProduct(id:number){
     this.api.deleteProduct(id)
     .subscribe({
-      next:(res)=>{
+      next:(_res)=>{
         alert('Product Deleted Succesfully');
       },
-      error:(err) =>{
+      error:(_err) =>{
         alert('error occur while deleting a product');
       }
     })
@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
         this.dataSource.paginator =this.paginator;
         this.dataSource.sort =this.sort;
       },
-      error:(err)=>{
+      error:(_err)=>{
         alert("Error while fetching data!!!")
       }
     })
